@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#0b5fff" />
+  <title>Space Invaders (1978) — pezzaliAPP</title>
+  <meta name="description" content="Un omaggio a Space Invaders (1978) in versione PWA: onde di alieni, UFO bonus, controlli touch e tastiera." />
+
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="dot"></span>
+      <strong>Space Invaders — 1978</strong>
+    </div>
+    <div class="hud">
+      <span id="scoreLabel">Punti: <b id="score">0</b></span>
+      <span id="waveLabel">Onda: <b id="wave">1</b></span>
+      <span id="livesLabel">Vite: <b id="lives">3</b></span>
+    </div>
+  </header>
+
+  <main>
+    <canvas id="game" width="480" height="640"></canvas>
+
+    <div class="controls">
+      <button id="btnLeft" aria-label="Sinistra">◀︎</button>
+      <button id="btnFire" aria-label="Fuoco">●</button>
+      <button id="btnRight" aria-label="Destra">▶︎</button>
+    </div>
+
+    <div class="toolbar">
+      <button id="btnPause">Pausa</button>
+      <button id="btnRestart">Restart</button>
+      <label class="toggle">
+        <input type="checkbox" id="chkSound" checked />
+        <span>Audio</span>
+      </label>
+    </div>
+
+    <section id="overlay" class="overlay hidden" role="dialog" aria-modal="true">
+      <div class="card">
+        <h2 id="title">Space Invaders</h2>
+        <p id="subtitle">Premi <kbd>Spazio</kbd> o <b>●</b> per iniziare.</p>
+        <hr />
+        <div class="howto">
+          <h3>Comandi</h3>
+          <ul>
+            <li><kbd>←</kbd>/<kbd>→</kbd> oppure <kbd>A</kbd>/<kbd>D</kbd> per muovere.</li>
+            <li><kbd>Spazio</kbd> per sparare. <kbd>P</kbd> per Pausa.</li>
+            <li>Su mobile: ◀︎ ● ▶︎</li>
+          </ul>
+        </div>
+        <div class="notes">
+          <p>Gli alieni avanzano a ondate. Colpisci l'<b>UFO</b> per punti bonus.</p>
+        </div>
+        <button id="btnPlay">Gioca</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    © 2025 Space Invaders — Una PWA di <a href="https://pezzaliapp.com" target="_blank" rel="noopener">pezzaliAPP.com</a>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+
+:root{
+  --bg:#0a0f1a; --ink:#e5f2ff; --ink2:#9fb8ff; --accent:#0b5fff; --good:#48e074; --warn:#ffcc00; --bad:#ff5f6d;
+}
+*{box-sizing:border-box}
+html,body{height:100%;}
+body{
+  margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;
+  background: radial-gradient(1200px 800px at 70% -20%, #102040 0%, var(--bg) 55%);
+  color:var(--ink);
+  display:flex; flex-direction:column; align-items:center;
+}
+.topbar{
+  width:100%; max-width:900px; display:flex; justify-content:space-between; align-items:center;
+  padding:.6rem .9rem; gap:.75rem; color:var(--ink2);
+}
+.brand{display:flex; align-items:center; gap:.6rem;}
+.brand .dot{width:.6rem; height:.6rem; background:var(--accent); border-radius:999px; box-shadow:0 0 10px var(--accent);}
+.hud{display:flex; gap:1rem; font-weight:600}
+main{display:flex; flex-direction:column; align-items:center; gap:.75rem; width:100%;}
+canvas#game{
+  width:min(96vw, 540px); height:calc(min(96vw, 540px) * 4/3);
+  background:linear-gradient(#000814,#001427);
+  border:2px solid #183a72; border-radius:18px;
+  box-shadow:0 20px 60px rgba(0,0,0,.35), inset 0 0 40px rgba(11,95,255,.15);
+  touch-action:none;
+}
+.controls{display:flex; gap:.75rem}
+.controls button{
+  font-size:1.4rem; width:4.2rem; height:4.2rem; border-radius:999px; border:2px solid #244c8f; background:#0e1b33; color:var(--ink);
+  box-shadow:0 8px 24px rgba(0,0,0,.35), inset 0 0 14px rgba(11,95,255,.15);
+}
+.toolbar{display:flex; gap:.5rem; align-items:center}
+.toolbar button{
+  padding:.5rem .9rem; border-radius:12px; border:1px solid #2b58aa; color:var(--ink);
+  background:#0d1a33;
+}
+.toggle{display:inline-flex; align-items:center; gap:.5rem; opacity:.9}
+.overlay{
+  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+}
+.hidden{display:none}
+.overlay .card{
+  width:min(92vw, 520px); background:#0c1730; border:1px solid #294e9b; border-radius:18px;
+  box-shadow:0 20px 90px rgba(0,0,0,.5), inset 0 0 40px rgba(11,95,255,.08);
+  padding:1rem 1.2rem 1.2rem;
+}
+.overlay h2{margin:.2rem 0 .3rem 0}
+.overlay hr{border:0; height:1px; background:#183a72; margin:.7rem 0}
+.overlay ul{margin:.3rem 0 .6rem 1rem}
+.overlay button{
+  margin-top:.6rem; width:100%; padding:.7rem 1rem; border-radius:14px; border:1px solid #2b58aa; background:#0d1a33; color:var(--ink);
+}
+.foot{margin:1rem 0 1.4rem 0; opacity:.7; font-size:.95rem}
+.foot a{color:var(--ink2)}
+@media (min-width:720px){
+  canvas#game{width:540px; height:720px}
+}
